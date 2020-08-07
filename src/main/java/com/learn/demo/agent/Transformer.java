@@ -10,7 +10,7 @@ import java.security.ProtectionDomain;
 
 public class Transformer implements ClassFileTransformer {
 
-    public static final String classNumberReturns2 = "TransClass.class.2";
+    public static final String classNumberReturns2 = "test.class.2";
 
     public static byte[] getBytesFromFile(String fileName) {
         try {
@@ -54,14 +54,20 @@ public class Transformer implements ClassFileTransformer {
      */
     public byte[] transform(ClassLoader l, String className, Class<?> c,
                             ProtectionDomain pd, byte[] b) throws IllegalClassFormatException {
-        if (!className.equals("TransClass")) {
+        //System.out.println(className);
+
+        //注意类名是全名
+        if (!className.equals("com/learn/demo/agent/test")) {
             return null;
         }
         return getBytesFromFile(classNumberReturns2);
     }
 
     public static void main(String[] args) {
-        
+        //System.out.println(getBytesFromFile(classNumberReturns2));
+
+        //新的class文件的路径、函数名必须和原文件一致，否则编译不通过或执行不通过
+        System.out.println(new test().num());
     }
 
 }

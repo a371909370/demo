@@ -95,6 +95,9 @@
 							<Premain-Class>
 								com.learn.demo.agent.PremainAgent
 							</Premain-Class>
+							<Agent-Class>
+								com.learn.demo.agent.PremainAgent
+							</Agent-Class>
 						</manifestEntries>
 					</archive>
 				</configuration>
