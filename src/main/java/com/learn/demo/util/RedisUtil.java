@@ -4,14 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
-import java.util.*;
+import java.util.Set;
 
 @Component
 public class RedisUtil {
 
-    @Resource
-    private RedisTemplate<String, Object> redisTemplate;
+    @Autowired
+    public RedisTemplate redisTemplate;
 
     public Set<String> keys(String keys) {
         try {
@@ -19,6 +18,17 @@ public class RedisUtil {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public boolean set(String key, Object value){
+        try {
+            redisTemplate.opsForValue().set(key, value);
+            return true;
+        }catch (Exception e){
+            System.out.println("出错了");
+            e.printStackTrace();
+            return false;
         }
     }
 
