@@ -19,6 +19,7 @@ public class ControllerTest {
     @RequestMapping("/getUser/{id}")
     @ResponseBody
     public User getUser(@PathVariable int id) {
+        System.out.println(userService.testIOC());
         return userService.findByID(id);
     }
 

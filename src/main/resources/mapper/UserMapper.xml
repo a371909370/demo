@@ -13,4 +13,6 @@
       SELECT * FROM user WHERE id = #{id} for update
     </select>
 
+<!--    <cache size="5"/>-->
+
 </mapper>

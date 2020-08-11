@@ -5,6 +5,15 @@ spring:
     username: root
     password: sxyq1w2e3
 
+  redis:
+    timeout: 0
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    #password: root
+
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.learn.demo.entity
