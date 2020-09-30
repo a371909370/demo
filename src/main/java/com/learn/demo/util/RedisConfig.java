@@ -20,7 +20,6 @@ import redis.clients.jedis.JedisPoolConfig;
 public class RedisConfig {
 
     @Bean
-    @ConfigurationProperties(prefix = "spring.redis.pool")
     public JedisConnectionFactory getRedisConnectionFactory(){
         JedisPoolConfig config = new JedisPoolConfig();
         JedisConnectionFactory factory = new JedisConnectionFactory();

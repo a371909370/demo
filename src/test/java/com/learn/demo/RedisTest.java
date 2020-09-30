@@ -10,6 +10,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import com.alibaba.fastjson.TypeReference;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -20,10 +24,9 @@ public class RedisTest {
 
     @Autowired
     public UserServiceImp userService;
-
     @Test
     public void test(){
-        User user = userService.findByID(1);
+        User user = userService.findByID(2);
         System.out.println(redisUtil.set("a", user));
         System.out.println(redisUtil.keys("a"));
     }

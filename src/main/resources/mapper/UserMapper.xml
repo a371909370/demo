@@ -13,6 +13,10 @@
       SELECT * FROM user WHERE id = #{id} for update
     </select>
 
+    <select id="selectAll" resultMap="userMap">
+        SELECT * FROM user
+    </select>
+
 <!--    <cache size="5"/>-->
 
 </mapper>
