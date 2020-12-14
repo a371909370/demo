@@ -1,5 +1,6 @@
 package com.learn.demo.entity;
 
+import com.learn.demo.util.CheckGetter;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
